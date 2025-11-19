@@ -80,6 +80,103 @@ print(avesta)
 print(c.get_supported_scripts())
 ```
 
+## Project :
+```python
+
+from ancient import AncientScripts, AncientTimeline
+
+# ایجاد نمونه از کلاس اصلی
+c = AncientScripts()
+
+# ایجاد تایم‌لاین با خط پهلوی
+t = AncientTimeline(script='pahlavi')
+
+print("🕊️ Welcome to AncientLinesOfTheWorld 🏛️")
+print("=" * 60)
+print("🔹 Supported Ancient Scripts:")
+for name, desc in c.get_supported_scripts().items():
+    print(f"  - {name:<12} → {desc}")
+print("=" * 60)
+
+
+text = "hi"
+print(f"\nOriginal text: {text}\n")
+
+print("🪶 Converted Texts:")
+print(f"  🔸 Pahlavi:       {c.pahlavi(text)}")
+print(f"  🔸 Akkadian:      {c.akkadian(text)}")
+print(f"  🔸 Avestan:       {c.avestan(text)}")
+print(f"  🔸 Manichaean:    {c.manichaean(text)}")
+print(f"  🔸 Linear B:      {c.linear_b(text)}")
+print(f"  🔸 Hebrew:        {c.hebrew(text)}")
+print(f"  🔸 Hieroglyph:    {c.hieroglyph(text)}")
+print(f"  🔸 Sanskrit:      {c.sanskrit(text)}")
+print(f"  🔸 Oracle Bone:   {c.oracle_bone(text)}")
+print(f"  🔸 : cuneiform :  {c.cuneiform(text)}")
+
+print("\n" + "=" * 60)
+
+# 🕰️ نمایش زمان زنده با خط پهلوی
+print("📜 Real-time Ancient Timeline (Pahlavi Script):")
+t.show()
+
+print("=" * 60)
+print("💫 Powered by AncientLinesOfTheWorld | Created by AmirHossein Kader")
+```
+
+## generate image
+
+```python
+from ancient.visualizer import AncientImageGenerator
+
+# ساخت شیء از کلاس و تعیین نوع خط
+generator = AncientImageGenerator(script="cuneiform")
+
+# متنی که می‌خوای تبدیل بشه
+text = "تمدن از اینجا آغاز شد"
+
+# تولید تصویر با متن باستانی
+output_image = generator.generate_image(text)
+
+print(f"📜 تصویر آماده شد و در این مسیر ذخیره شد:\n{output_image}")
+
+```
+
+#  AncientScriptAI
+
+یک دستیار هوش مصنوعی برای پاسخ دادن به **متن‌ها به زبان‌های باستانی**.  
+این کلاس از سرویس AI لیارا استفاده می‌کند و برای کار کردن نیاز به **توکن API** دارد.
+
+---
+
+## 🔑 پیش‌نیاز
+
+برای استفاده از این کلاس شما نیاز دارید:
+
+1. ثبت‌نام در لیارا و دریافت **API Key**:
+   [https://console.liara.ir/ai](https://console.liara.ir/ai)
+
+
+
+```python
+from ancient import  AncientScriptAI
+
+# وارد کردن توکن API خود
+api_key = ""
+ai_bot =  AncientScriptAI(api_key=api_key)
+
+# متن ورودی کاربر
+text = "سلام باستانی"
+script = "cuneiform"
+
+
+# گرفتن پاسخ AI
+response = ai_bot.get_ancient_response(text, script)
+print(response)
+
+
+
+```
 ## Supported Scripts
 - Cuneiform
 - Egyptian Hieroglyphs
@@ -89,5 +186,6 @@ print(c.get_supported_scripts())
 -avestan
 
 - And more...
+
 
 
