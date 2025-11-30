@@ -127,7 +127,7 @@ print("💫 Powered by AncientLinesOfTheWorld | Created by AmirHossein Kader")
 ## generate image
 
 ```python
-from ancient.visualizer import AncientImageGenerator
+from ancient import AncientImageGenerator
 
 # ساخت شیء از کلاس و تعیین نوع خط
 generator = AncientImageGenerator(script="cuneiform")
@@ -177,6 +177,8 @@ print(response)
 
 
 ```
+
+
 ## Supported Scripts
 - Cuneiform
 - Egyptian Hieroglyphs
@@ -187,5 +189,33 @@ print(response)
 
 - And more...
 
+# 🌐 بخش WebApp — کلاس `AncientWeb`
+
+کلاس **`AncientWeb`** یکی از قابلیت‌های منحصربه‌فرد کتابخانه `ancientlinesoftheworld` است.  
+این کلاس یک **وب‌اپلیکیشن لوکال** فراهم می‌کند که به شما اجازه می‌دهد متن‌ها را به **خطوط باستانی** تبدیل کنید، بدون نیاز به هاست یا سرور خارجی.
+
+---
+
+
+## 🎯 وظیفه کلاس
+
+- اجرای خودکار یک **وب‌اپ Flask** روی سیستم شما  
+- نمایش رابط کاربری ساده و کاربرپسند  
+- پشتیبانی از **تمام خطوط باستانی موجود در کتابخانه**  
+- امکان استفاده آفلاین و لوکال  
+- مناسب برای تست، دمو یا استفاده شخصی و آموزشی  
+
+---
+
+## 🚀 نمونه استفاده
+
+```python
+from ancient.web_app import AncientWeb
+
+# ایجاد نمونه کلاس
+app = AncientWeb(version="2.5.0")
+
+# اجرای وب‌اپ لوکال
+app.run_app()
 
 
